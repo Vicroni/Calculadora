@@ -13,7 +13,8 @@ import java.net.Socket;
 
 /**
  *
- * @author Alumno
+ * @author Saúl Fernando González Dominguez
+ * @author González Anguiano Carlos Eduardo
  */
 public class Servidor extends Thread{
     
@@ -25,7 +26,18 @@ public class Servidor extends Thread{
     public Servidor(String nombreHilo) {
         super(nombreHilo);
     }
-
+    /**
+     * <h3>run()</h3>
+     * Ejecuta al servidor, deteniendolo hasta que se hayan conectado
+     * 100 clientes o se detenga el programa.
+     * 
+     * Funciona recibiendo una entrada UTF8 en forma de ruta, dividiendola
+     * por "/" (diagonales), emulando a una API.
+     * 
+     * La ruta se divide por: Numero 1 / Operación / Número 2
+     * 
+     * Ejecuta la operación deseada y la envía a traves de un dataOutputStream
+     */
     public void run() {
         try {
             ServerSocket skServidor = new ServerSocket(Servidor.PUERTO);

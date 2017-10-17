@@ -12,7 +12,8 @@ import java.net.Socket;
 
 /**
  *
- * @author Alumno
+ * @author Saúl Fernando González Dominguez
+ * @author González Anguiano Carlos Eduardo
  */
 public class Cliente {
 
@@ -20,6 +21,21 @@ public class Cliente {
 
     public static final String HOST = "localhost";
 
+    /**
+     * <h3>run()</h3>
+     * 
+     * Ejecuta al cliente, creando un objeto de la clase Socket a través del
+     * cuál obtiene y envía valores al servidor.
+     * 
+     * Envía una ruta y recibe una String que convierte a double para mostrar
+     * como resultado.
+     * 
+     * @param  ruta: Es la ruta que se le envía al servidor que contiene los
+     * datos de número 1, número 2 y operación, necesarios para que el servidor
+     * realice la operación y devuelva un resultado.
+     * 
+     */
+    
     public double run(String ruta) {
         double x = 0;
         try {

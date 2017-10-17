@@ -40,6 +40,13 @@ public class Calculadora extends Ventana {
         this.start(100, 100, 400, 200);
     }
 
+    /**
+     * <h3>addElements()</h3>
+     * 
+     * Inicializa los componentes gráficos de la calculadora así como las acciones
+     * de los botones.
+     */
+    
     @Override
     protected void addElements() {
         Container panel = this.getContentPane();
@@ -97,6 +104,14 @@ public class Calculadora extends Ventana {
         panel.add(panelBtn, BorderLayout.CENTER);
     }
 
+    /**
+     * Regresa un boton configurado para realizar la una operación en específico
+     * 
+     * @return  boton: El objeto boton creado que realiza una operación
+     * 
+     * @param op: Operación que realizará el botón.
+     */
+    
     public Boton configBtnOp(String op) {
         Boton boton = new Boton(op) {
             @Override
@@ -127,6 +142,14 @@ public class Calculadora extends Ventana {
         return boton;
     }
 
+    /**
+     * Inicializa un boton que genera el enrutamiento que se le envía al
+     * servidor posterior a haber realizado una operación y seleccionado 
+     * los dos núemeros a operar.
+     * 
+     * @return boton: El botón que tendrá la función de ejecutar la operación.
+     */
+    
     public Boton configBtnIgual() {
         Boton boton = new Boton("=") {
             @Override
@@ -187,6 +210,14 @@ public class Calculadora extends Ventana {
         return boton;
     }
 
+    /**
+     * Inicializa un boton que contiene un valor numérico
+     * 
+     * @param i: Valor numérico del botón.
+     * 
+     * @return boton: botón con un valor numérico entero.
+     */
+    
     public Boton configNum(int i) {
         Boton boton = new Boton(Integer.toString(i)) {
             @Override
@@ -209,6 +240,13 @@ public class Calculadora extends Ventana {
         });
         return boton;
     }
+    
+    /**
+     * Inicializa un botón que puede limpiar el cuadro de texto de entrada
+     * de valores de la calculadora
+     * 
+     * @return boton: Boton con acción de limpiar el valor de input.
+     */
     
     public Boton configCE() {
         Boton boton = new Boton("CE") {

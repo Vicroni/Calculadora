@@ -24,7 +24,8 @@ import logica.Cliente;
 
 /**
  *
- * @author SAUL
+ * @author Saúl Fernando González Dominguez
+ * @author González Anguiano Carlos Eduardo
  */
 public class Calculadora extends Ventana {
 
@@ -83,9 +84,8 @@ public class Calculadora extends Ventana {
         btn_resta = this.configBtnOp("-");
         panelBtn.add(btn_resta);
 
-        JButton btn = new JButton("e");
+        JButton btn = this.configCE();
         JButton btn1 = this.configBtnIgual();
-        btn.setVisible(false);
 
         panelBtn.add(btn);
         panelBtn.add(this.btnNum[0]);
@@ -208,5 +208,29 @@ public class Calculadora extends Ventana {
             }
         });
         return boton;
+    }
+    
+    public Boton configCE() {
+        Boton boton = new Boton("CE") {
+            @Override
+            public void action() {
+                text.setText("");
+            }
+        };
+        boton.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        boton.setBackground(java.awt.Color.cyan);
+        
+         boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                boton.setBackground(java.awt.Color.LIGHT_GRAY);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                boton.setBackground(java.awt.Color.cyan);
+            }
+        });
+        
+        return boton;
+        
     }
 }
